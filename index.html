@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 700px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 25px;
+        }
+        button {
+            background-color: #007cba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #005a87;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+        }
+        .reset-btn:hover {
+            background-color: #c82333;
+        }
+        .display-area {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+        }
+        .number-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .number-item {
+            background-color: #007cba;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Properties Checker</h1>
+        
+        <form action="check_numbers.php" method="post">
+            <div class="form-group">
+                <label for="numbers">Enter a list of numbers (separated by commas):</label>
+                <input type="text" id="numbers" name="numbers" placeholder="Example: 2, 5, 13, 153, 89" required>
+            </div>
+            
+            <div class="buttons">
+                <button type="submit" name="action" value="check">CHECK THESE NUMBERS</button>
+            </div>
+        </form>
+        
+        <div class="buttons">
+            <form action="display.php" method="post" style="display: inline;">
+                <button type="submit" name="display" value="prime">PRIME</button>
+                <button type="submit" name="display" value="armstrong">ARMSTRONG</button>
+                <button type="submit" name="display" value="fibonacci">FIBONACCI</button>
+                <button type="submit" name="display" value="none">NONE</button>
+                <button type="submit" name="display" value="reset" class="reset-btn">RESET</button>
+            </form>
+        </div>
+        
+        <div id="display-area"></div>
+    </div>
+</body>
+</html>
